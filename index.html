@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrara Calçados | Link na Bio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #c5a059; /* Dourado Ferrara */
+            --text-light: #f4f4f4;
+            --bg-gradient: linear-gradient(135deg, #0f0f0f 0%, #252525 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Perfil */
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        p.bio {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Botões Dinâmicos */
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            text-decoration: none;
+            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn i {
+            position: absolute;
+            left: 20px;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+        }
+
+        .btn:hover i {
+            color: var(--primary);
+        }
+
+        /* Seção "Conheça a Marca" */
+        .brand-story {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            border-left: 3px solid var(--accent);
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Pulse Effect no Whats */
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(197, 160, 89, 0.4); }
+            100% { box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo/Imagem (Troque o link da imagem abaixo) -->
+        <img src="https://via.placeholder.com/150/c5a059/ffffff?text=Ferrara" alt="Ferrara Calçados" class="profile-img">
+        
+        <h1>Ferrara</h1>
+        <p class="bio">Elegância e conforto em cada passo.</p>
+
+        <div class="links-wrapper">
+            <!-- SITE -->
+            <a href="https://ferraracalcados.com.br" target="_blank" class="btn">
+                <i class="fas fa-globe"></i>
+                Visitar Site Oficial
+            </a>
+
+            <!-- WHATSAPP (Substitua o número abaixo) -->
+            <a href="https://wa.me/5500000000000" target="_blank" class="btn pulse">
+                <i class="fab fa-whatsapp"></i>
+                Comprar pelo WhatsApp
+            </a>
+
+            <!-- CONHEÇA A MARCA -->
+            <a href="#sobre" class="btn" onclick="document.getElementById('sobre').style.display='block'">
+                <i class="fas fa-shoe-prints"></i>
+                Conheça a Ferrara
+            </a>
+        </div>
+
+        <!-- Seção Sobre Oculta que aparece ao clicar -->
+        <div id="sobre" class="brand-story" style="display: none;">
+            <strong>A MARCA FERRARA</strong><br>
+            Nascida da paixão pelo design e pela qualidade, a Ferrara une a tradição artesanal dos calçados com o dinamismo da moda contemporânea. Cada par é pensado para mulheres que não abrem mão do estilo, mas exigem o conforto absoluto.
+        </div>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="https://ferraracalcados.com.br"><i class="fas fa-shopping-bag"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
