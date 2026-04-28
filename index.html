@@ -3,171 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferrara | Calçados Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Ferrara | Links Oficiais</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --bg-color: #0f0f0f;
-            --card-bg: #1a1a1a;
-            --accent-color: #7d0000; /* Vermelho bordô mais elegante */
-            --text-color: #ffffff;
-            --border-style: 1px solid rgba(255,255,255,0.1);
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--bg-color);
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            line-height: 1.6;
+        body { background-color: #000; font-family: 'Montserrat', sans-serif; color: #fff; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 420px; padding: 50px 25px; text-align: center; }
+        
+        /* LOGO COM FILTRO PARA FICAR BRANCA E VERMELHA */
+        .logo-img { 
+            width: 220px; 
+            margin-bottom: 40px; 
+            /* Esse filtro transforma o preto da sua logo original em branco no site! */
+            filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255,255,255,0.2)); 
         }
 
-        .container {
-            width: 100%;
-            max-width: 420px;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        /* Logo corrigida */
-        .header-logo {
-            width: 160px;
-            margin-bottom: 30px;
-        }
-
-        /* Banner Principal - Agora com proporção de site */
-        .main-banner {
+        .banner {
             width: 100%;
             height: 220px;
-            background: url('banner.jpg') center/cover no-repeat, #222; 
-            border-radius: 4px;
-            margin-bottom: 30px;
-            border: var(--border-style);
+            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%), 
+                        url('https://ferraracalcados.com.br/wp-content/uploads/2023/11/banner-desktop-tokio-all-black.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 35px;
+            border: 1px solid #222;
         }
 
-        h1 {
-            font-size: 1rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            font-weight: 400;
-            margin-bottom: 30px;
-        }
+        .links-wrapper { display: flex; flex-direction: column; gap: 15px; }
 
-        /* Links Estilo Minimalista */
-        .links-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .link-card {
-            background: var(--card-bg);
-            border: var(--border-style);
-            padding: 16px;
+        .btn {
+            background: #111;
+            border: 1px solid #333;
+            padding: 18px;
+            color: #fff;
             text-decoration: none;
-            color: var(--text-color);
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             transition: 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            border-radius: 4px;
         }
 
-        .link-card:hover {
-            background: #252525;
-            border-color: rgba(255,255,255,0.4);
-        }
+        .btn:hover { background: #fff; color: #000; border-color: #fff; }
 
-        /* Botão VIP mais discreto e elegante */
-        .link-card.vip {
-            background: none;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
+        .btn-vip {
+            border: 1px solid #bc0000;
+            color: #ff4d4d;
         }
+        .btn-vip:hover { background: #bc0000; color: #fff; }
 
-        .link-card.vip:hover {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .link-card i {
-            position: absolute;
-            left: 20px;
-            font-size: 1rem;
-        }
-
-        /* Texto Conheça a Marca */
-        .brand-text {
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 0.8rem;
-            font-weight: 300;
-            opacity: 0.7;
-            border-top: var(--border-style);
-        }
-
-        .socials {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .socials a {
-            color: white;
-            font-size: 1.2rem;
-            opacity: 0.5;
-        }
+        .footer-tagline { margin-top: 50px; font-size: 0.7rem; letter-spacing: 3px; opacity: 0.4; text-transform: uppercase; }
+        .social-icons { margin-top: 25px; display: flex; justify-content: center; gap: 30px; }
+        .social-icons a { color: #fff; font-size: 1.3rem; opacity: 0.6; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- LOGO: Se não carregar, ele mostrará o texto elegante -->
-    <img src="https://ferraracalcados.com.br/wp-content/uploads/2023/04/logo-ferrara.png" alt="FERRARA" class="header-logo">
+    <!-- Usando a logo original do seu site, mas com filtro que eu criei para ficar branca -->
+    <img src="https://ferraracalcados.com.br/wp-content/uploads/2023/04/logo-ferrara.png" alt="FERRARA" class="logo-img">
 
-    <!-- BANNER: Espaço para a foto que você me mandou -->
-    <div class="main-banner"></div>
+    <div class="banner"></div>
 
-    <h1>Ferrara</h1>
-
-    <div class="links-group">
-        <a href="https://ferraracalcados.com.br" class="link-card" target="_blank">
-            <i class="fas fa-shopping-bag"></i>
-            Site Oficial
+    <div class="links-wrapper">
+        <a href="https://ferraracalcados.com.br" class="btn" target="_blank">Loja Online</a>
+        
+        <!-- COLOQUE SEU WHATSAPP AQUI -->
+        <a href="https://wa.me/5516999999999" class="btn btn-vip" target="_blank">
+            <i class="fab fa-whatsapp"></i> Atendimento VIP
         </a>
-
-        <a href="https://wa.me/5516999999999" class="link-card vip" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            Atendimento VIP
-        </a>
-
-        <a href="https://ferraracalcados.com.br/categoria/casual/" class="link-card" target="_blank">
-            <i class="fas fa-shoe-prints"></i>
-            Coleção Casual
-        </a>
-
-        <a href="https://ferraracalcados.com.br/categoria/social/" class="link-card" target="_blank">
-            <i class="fas fa-chevron-right"></i>
-            Linha Social
-        </a>
+        
+        <a href="https://ferraracalcados.com.br/categoria/casual/" class="btn" target="_blank">Coleção Casual</a>
+        <a href="https://ferraracalcados.com.br/categoria/social/" class="btn" target="_blank">Linha Social</a>
     </div>
 
-    <div class="brand-text">
-        <p>Não importa o destino, use Ferrara.<br>Conforto e sofisticação em cada passo.</p>
-    </div>
+    <div class="footer-tagline">Ferrara &copy; 2024</div>
 
-    <div class="socials">
-        <a href="https://www.instagram.com/ferraracalcados/"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/ferraracalcados/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://ferraracalcados.com.br" target="_blank"><i class="fas fa-globe"></i></a>
     </div>
 </div>
 
