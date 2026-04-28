@@ -3,88 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferrara | Links Oficiais</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Ferrara | Estilo e Conforto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #000; font-family: 'Montserrat', sans-serif; color: #fff; display: flex; justify-content: center; }
-        .container { width: 100%; max-width: 420px; padding: 50px 25px; text-align: center; }
         
-        /* LOGO COM FILTRO PARA FICAR BRANCA E VERMELHA */
-        .logo-img { 
-            width: 220px; 
-            margin-bottom: 40px; 
-            /* Esse filtro transforma o preto da sua logo original em branco no site! */
-            filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255,255,255,0.2)); 
+        body {
+            background-color: #000000;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
         }
 
-        .banner {
+        .container {
             width: 100%;
-            height: 220px;
-            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%), 
-                        url('https://ferraracalcados.com.br/wp-content/uploads/2023/11/banner-desktop-tokio-all-black.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            margin-bottom: 35px;
-            border: 1px solid #222;
+            max-width: 400px;
+            padding: 40px 20px;
+            text-align: center;
         }
 
-        .links-wrapper { display: flex; flex-direction: column; gap: 15px; }
+        /* Logo: O código abaixo remove o fundo branco e deixa a logo clara */
+        .logo-box {
+            margin-bottom: 30px;
+            mix-blend-mode: screen; /* Remove o fundo preto/branco automaticamente */
+        }
+        
+        .logo-img {
+            width: 200px;
+            filter: brightness(0) invert(1); /* Transforma o preto em branco */
+        }
+
+        /* Banner Profissional com a sua foto */
+        .banner-card {
+            width: 100%;
+            height: 240px;
+            background: url('banner.jpg') center/cover no-repeat;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            border: 1px solid #1a1a1a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .links-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
         .btn {
-            background: #111;
-            border: 1px solid #333;
-            padding: 18px;
+            background: #000;
+            border: 1px solid #222;
+            padding: 20px;
             color: #fff;
             text-decoration: none;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            transition: 0.3s;
-            border-radius: 4px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .btn:hover { background: #fff; color: #000; border-color: #fff; }
+        .btn:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: scale(1.02);
+        }
 
+        /* Botão VIP: Bordô Ferrara */
         .btn-vip {
-            border: 1px solid #bc0000;
+            border: 1px solid #800000;
             color: #ff4d4d;
         }
-        .btn-vip:hover { background: #bc0000; color: #fff; }
 
-        .footer-tagline { margin-top: 50px; font-size: 0.7rem; letter-spacing: 3px; opacity: 0.4; text-transform: uppercase; }
-        .social-icons { margin-top: 25px; display: flex; justify-content: center; gap: 30px; }
-        .social-icons a { color: #fff; font-size: 1.3rem; opacity: 0.6; }
+        .btn-vip:hover {
+            background: #800000;
+            color: #fff;
+        }
+
+        .brand-info {
+            margin-top: 50px;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            opacity: 0.4;
+            line-height: 2;
+        }
+
+        .social-row {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-row a {
+            color: #fff;
+            font-size: 1.2rem;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Usando a logo original do seu site, mas com filtro que eu criei para ficar branca -->
-    <img src="https://ferraracalcados.com.br/wp-content/uploads/2023/04/logo-ferrara.png" alt="FERRARA" class="logo-img">
+    <div class="logo-box">
+        <!-- Puxando a logo que você subiu no GitHub -->
+        <img src="logo.png" alt="Ferrara" class="logo-img">
+    </div>
 
-    <div class="banner"></div>
+    <!-- Puxando o banner que você subiu no GitHub -->
+    <div class="banner-card"></div>
 
-    <div class="links-wrapper">
-        <a href="https://ferraracalcados.com.br" class="btn" target="_blank">Loja Online</a>
+    <div class="links-group">
+        <a href="https://ferraracalcados.com.br" class="btn">Visitar Site Oficial</a>
         
-        <!-- COLOQUE SEU WHATSAPP AQUI -->
-        <a href="https://wa.me/5516999999999" class="btn btn-vip" target="_blank">
+        <!-- AJUSTE SEU WHATSAPP AQUI -->
+        <a href="https://wa.me/5516999999999" class="btn btn-vip">
             <i class="fab fa-whatsapp"></i> Atendimento VIP
         </a>
         
-        <a href="https://ferraracalcados.com.br/categoria/casual/" class="btn" target="_blank">Coleção Casual</a>
-        <a href="https://ferraracalcados.com.br/categoria/social/" class="btn" target="_blank">Linha Social</a>
+        <a href="https://ferraracalcados.com.br/categoria/casual/" class="btn">Linha Casual</a>
+        <a href="https://ferraracalcados.com.br/categoria/social/" class="btn">Linha Social</a>
     </div>
 
-    <div class="footer-tagline">Ferrara &copy; 2024</div>
+    <div class="brand-info">
+        The Next Level Footwear<br>
+        Ferrara &copy; 2024
+    </div>
 
-    <div class="social-icons">
-        <a href="https://www.instagram.com/ferraracalcados/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://ferraracalcados.com.br" target="_blank"><i class="fas fa-globe"></i></a>
+    <div class="social-row">
+        <a href="https://www.instagram.com/ferraracalcados/"><i class="fab fa-instagram"></i></a>
+        <a href="https://ferraracalcados.com.br"><i class="fas fa-shopping-bag"></i></a>
     </div>
 </div>
 
