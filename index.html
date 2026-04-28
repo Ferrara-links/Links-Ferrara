@@ -3,210 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferrara | Conforto em cada passo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+    <title>Ferrara | Calçados Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #ffffff;
-            --accent: #bc0000; /* Vermelho dos detalhes do site */
-            --bg-dark: #0a0a0a;
+            --bg-color: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --accent-color: #7d0000; /* Vermelho bordô mais elegante */
+            --text-color: #ffffff;
+            --border-style: 1px solid rgba(255,255,255,0.1);
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-dark);
+            background-color: var(--bg-color);
             font-family: 'Montserrat', sans-serif;
-            color: var(--primary);
+            color: var(--text-color);
             display: flex;
             justify-content: center;
+            line-height: 1.6;
         }
 
         .container {
             width: 100%;
-            max-width: 450px;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
-                        url('https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2012&auto=format&fit=crop'); /* Fundo sutil */
-            background-size: cover;
-            background-position: center;
+            max-width: 420px;
             padding: 40px 20px;
             text-align: center;
         }
 
-        /* Logo Premium */
-        .logo {
-            width: 180px;
+        /* Logo corrigida */
+        .header-logo {
+            width: 160px;
             margin-bottom: 30px;
-            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
         }
 
-        /* Banner Hero */
-        .hero-card {
+        /* Banner Principal - Agora com proporção de site */
+        .main-banner {
             width: 100%;
-            height: 200px;
-            border-radius: 20px;
-            background: url('https://ferraracalcados.com.br/wp-content/uploads/2023/11/banner-desktop-tokio-all-black.jpg') center/cover;
+            height: 220px;
+            background: url('banner.jpg') center/cover no-repeat, #222; 
+            border-radius: 4px;
             margin-bottom: 30px;
-            border: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: var(--border-style);
         }
 
         h1 {
-            font-size: 1.2rem;
+            font-size: 1rem;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 800;
-            margin-bottom: 10px;
+            font-weight: 400;
+            margin-bottom: 30px;
         }
 
-        .tagline {
-            font-weight: 300;
-            font-size: 0.85rem;
-            margin-bottom: 40px;
-            opacity: 0.8;
-            letter-spacing: 1px;
-        }
-
-        /* Botões Estilo Site Ferrara */
-        .links-container {
+        /* Links Estilo Minimalista */
+        .links-group {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 12px;
         }
 
-        .link-item {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 18px;
-            border-radius: 12px;
+        .link-card {
+            background: var(--card-bg);
+            border: var(--border-style);
+            padding: 16px;
             text-decoration: none;
-            color: white;
+            color: var(--text-color);
+            font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.85rem;
             letter-spacing: 2px;
-            transition: all 0.4s ease;
+            transition: 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
         }
 
-        .link-item:hover {
-            background: var(--primary);
-            color: #000;
-            transform: scale(1.02);
+        .link-card:hover {
+            background: #252525;
+            border-color: rgba(255,255,255,0.4);
         }
 
-        .link-item.special {
-            background: var(--accent);
-            border: none;
-            animation: pulse 2s infinite;
+        /* Botão VIP mais discreto e elegante */
+        .link-card.vip {
+            background: none;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
         }
 
-        .link-item i {
+        .link-card.vip:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .link-card i {
             position: absolute;
             left: 20px;
-            font-size: 1.1rem;
-        }
-
-        /* Seção "Sobre" Dinâmica */
-        .about-section {
-            margin-top: 50px;
-            padding: 25px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .about-section h2 {
             font-size: 1rem;
-            margin-bottom: 15px;
-            color: var(--accent);
         }
 
-        .about-section p {
-            font-size: 0.85rem;
-            line-height: 1.6;
-            opacity: 0.7;
-            font-weight: 300;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0px rgba(188, 0, 0, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(188, 0, 0, 0); }
-            100% { box-shadow: 0 0 0 0px rgba(188, 0, 0, 0); }
-        }
-
-        .social-footer {
+        /* Texto Conheça a Marca */
+        .brand-text {
             margin-top: 40px;
+            padding: 20px;
+            font-size: 0.8rem;
+            font-weight: 300;
+            opacity: 0.7;
+            border-top: var(--border-style);
+        }
+
+        .socials {
+            margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
         }
 
-        .social-footer a {
+        .socials a {
             color: white;
-            font-size: 1.4rem;
-            opacity: 0.6;
-            transition: 0.3s;
-        }
-
-        .social-footer a:hover {
-            opacity: 1;
-            color: var(--accent);
+            font-size: 1.2rem;
+            opacity: 0.5;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Substituí por uma imagem de logo genérica clara, você pode subir a sua logo-ferrara.png -->
-    <img src="https://ferraracalcados.com.br/wp-content/uploads/2023/04/logo-ferrara.png" alt="Ferrara Logo" class="logo">
+    <!-- LOGO: Se não carregar, ele mostrará o texto elegante -->
+    <img src="https://ferraracalcados.com.br/wp-content/uploads/2023/04/logo-ferrara.png" alt="FERRARA" class="header-logo">
 
-    <div class="hero-card">
-        <!-- O fundo deste card é o Banner do site -->
-    </div>
+    <!-- BANNER: Espaço para a foto que você me mandou -->
+    <div class="main-banner"></div>
 
     <h1>Ferrara</h1>
-    <p class="tagline">CONFORTO EM CADA PASSO</p>
 
-    <div class="links-container">
-        <a href="https://ferraracalcados.com.br" class="link-item" target="_blank">
+    <div class="links-group">
+        <a href="https://ferraracalcados.com.br" class="link-card" target="_blank">
             <i class="fas fa-shopping-bag"></i>
-            Loja Online
+            Site Oficial
         </a>
 
-        <!-- COLOQUE SEU WHATSAPP AQUI -->
-        <a href="https://wa.me/5516999999999" class="link-item special" target="_blank">
+        <a href="https://wa.me/5516999999999" class="link-card vip" target="_blank">
             <i class="fab fa-whatsapp"></i>
             Atendimento VIP
         </a>
 
-        <a href="https://ferraracalcados.com.br/categoria/casual/" class="link-item" target="_blank">
+        <a href="https://ferraracalcados.com.br/categoria/casual/" class="link-card" target="_blank">
             <i class="fas fa-shoe-prints"></i>
-            Linha Casual
+            Coleção Casual
         </a>
 
-        <a href="#conheca" class="link-item">
-            <i class="fas fa-star"></i>
-            Conheça a Marca
+        <a href="https://ferraracalcados.com.br/categoria/social/" class="link-card" target="_blank">
+            <i class="fas fa-chevron-right"></i>
+            Linha Social
         </a>
     </div>
 
-    <div id="conheca" class="about-section">
-        <h2>A ESSÊNCIA FERRARA</h2>
-        <p>Não importa o destino, use Ferrara. Criamos calçados que unem a sofisticação do design contemporâneo com o máximo conforto para o seu dia a dia. Alcance o próximo nível.</p>
+    <div class="brand-text">
+        <p>Não importa o destino, use Ferrara.<br>Conforto e sofisticação em cada passo.</p>
     </div>
 
-    <div class="social-footer">
-        <a href="https://www.instagram.com/ferraracalcados/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="socials">
+        <a href="https://www.instagram.com/ferraracalcados/"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-facebook"></i></a>
     </div>
 </div>
