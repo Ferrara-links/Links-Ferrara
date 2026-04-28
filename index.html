@@ -3,200 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferrara | Official</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>FERRARA VIP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --accent: #bc0000;
-            --bg: #050505;
-            --card: #111111;
+            --bg-color: #0a0a0a;
+            --card-bg: #141414;
+            --accent-red: #4a0000;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --border-color: #222222;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            background-color: var(--bg);
-            font-family: 'Montserrat', sans-serif;
-            color: #fff;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
+            margin: 0;
             display: flex;
             justify-content: center;
-            min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
             width: 100%;
             max-width: 400px;
-            padding: 50px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* LOGO - TRATAMENTO DE ALTO NÍVEL */
-        .logo-container {
-            width: 100%;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 40px;
-            /* O truque abaixo remove o fundo branco da imagem e inverte a cor preta para branco */
-            filter: brightness(0) invert(1);
-            mix-blend-mode: lighten;
-        }
-
-        .logo-img {
-            max-width: 220px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        /* BANNER */
-        .banner {
-            width: 100%;
-            height: 240px;
-            background: url('banner.jpg') center/cover no-repeat;
-            border-radius: 12px;
-            margin-bottom: 35px;
-            border: 1px solid #222;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-        }
-
-        /* LINKS */
-        .links {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 20px;
-            background: var(--card);
-            border: 1px solid #222;
-            border-radius: 8px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s all ease;
-            position: relative;
-        }
-
-        .btn:hover {
-            border-color: #555;
-            background: #1a1a1a;
-            transform: translateY(-2px);
-        }
-
-        .btn-wa {
-            border: 1px solid var(--accent);
-            color: #ff4d4d;
-        }
-
-        .btn-wa:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-
-        .btn i {
-            position: absolute;
-            left: 20px;
-            font-size: 1.1rem;
-        }
-
-        /* TEXTO */
-        .footer-info {
-            margin-top: 50px;
             text-align: center;
         }
 
-        .footer-info h2 {
-            font-size: 0.65rem;
-            letter-spacing: 5px;
-            color: var(--accent);
-            text-transform: uppercase;
-            margin-bottom: 15px;
+        /* HEADER - LOGO TRANSPARENTE */
+        .logo-header {
+            padding: 30px 0;
+        }
+        .logo-header img {
+            width: 180px;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));
         }
 
-        .footer-info p {
-            font-size: 0.8rem;
-            color: #666;
-            line-height: 1.6;
-            font-weight: 400;
+        /* IMAGE DESTAQUE - PROPORÇÃO PREMIUM */
+        .featured-image {
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
         }
+        .featured-image:hover { transform: scale(1.02); }
 
-        .social {
-            margin-top: 40px;
+        /* LINKS STACK */
+        .links-stack {
             display: flex;
-            gap: 25px;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .social a {
-            color: #fff;
-            font-size: 1.4rem;
-            opacity: 0.4;
+        .link-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: white;
+            text-decoration: none;
+            padding: 18px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .link-item:hover {
+            background: #1a1a1a;
+            border-color: #444;
+        }
+
+        /* BOTÃO DESTAQUE VIP (MAIOR CONVERSÃO) */
+        .link-item.vip {
+            background: var(--accent-red);
+            border-color: #600000;
+        }
+        .link-item.vip:hover {
+            background: #600000;
+        }
+
+        /* TEXTO E FOOTER */
+        .mission-text {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: var(--text-dim);
+            font-size: 22px;
             transition: 0.3s;
         }
 
-        .social a:hover { opacity: 1; }
+        .social-icons a:hover { color: white; }
 
-        .copyright {
+        .footer-tag {
             margin-top: 40px;
-            font-size: 0.5rem;
-            opacity: 0.2;
+            font-size: 10px;
             letter-spacing: 2px;
+            color: #333;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="logo-container">
-        <!-- Suba sua logo original mesmo, o código acima limpa ela -->
-        <img src="logo.png" alt="FERRARA" class="logo-img">
+    <div class="container">
+        <header class="logo-header">
+            <img src="URL_DA_SUA_LOGO_TRANSPARENTE.png" alt="FERRARA">
+        </header>
+
+        <img src="URL_DA_FOTO_PREMIUM_TOKIO.jpg" alt="Ferrara Tokio" class="featured-image">
+
+        <div class="links-stack">
+            <a href="https://ferrara.com.br" class="link-item">
+                Site Oficial <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <a href="https://wa.me/SEUNUMERO" class="link-item vip">
+                Atendimento VIP <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a href="#" class="link-item">
+                Linha Casual <i class="fas fa-shoe-prints"></i>
+            </a>
+
+            <a href="#" class="link-item">
+                Linha Social <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="mission-text">
+            <strong>FERRARA FOOTWEAR</strong><br>
+            A união entre o design italiano e a alma brasileira.<br>
+            Conforto absoluto em cada detalhe.
+        </div>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fas fa-globe"></i></a>
+        </div>
+
+        <div class="footer-tag">The Next Level Experience</div>
     </div>
-
-    <div class="banner"></div>
-
-    <div class="links">
-        <a href="https://ferraracalcados.com.br" class="btn" target="_blank">
-            <i class="fa-solid fa-cart-shopping"></i> Loja Online
-        </a>
-
-        <a href="https://wa.me/5516999999999" class="btn btn-wa" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> Atendimento VIP
-        </a>
-
-        <a href="https://ferraracalcados.com.br/categoria/casual/" class="btn" target="_blank">
-            <i class="fa-solid fa-shoe-prints"></i> Linha Casual
-        </a>
-
-        <a href="https://ferraracalcados.com.br/categoria/social/" class="btn" target="_blank">
-            <i class="fa-solid fa-chevron-right"></i> Linha Social
-        </a>
-    </div>
-
-    <div class="footer-info">
-        <h2>Ferrara Footwear</h2>
-        <p>Sofisticação italiana, essência brasileira.<br>O próximo nível do seu estilo.</p>
-    </div>
-
-    <div class="social">
-        <a href="https://www.instagram.com/ferraracalcados/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://ferraracalcados.com.br" target="_blank"><i class="fa-solid fa-globe"></i></a>
-    </div>
-
-    <div class="copyright">FERRARA &copy; 2024</div>
-</div>
 
 </body>
 </html>
