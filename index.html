@@ -3,163 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FERRARA VIP</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>FERRARA | Official</title>
     <style>
-        :root {
-            --bg-color: #0a0a0a;
-            --card-bg: #141414;
-            --accent-red: #4a0000;
-            --text-main: #ffffff;
-            --text-dim: #a0a0a0;
-            --border-color: #222222;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', -apple-system, sans-serif;
-            margin: 0;
+        /* RESET TOTAL PARA ELIMINAR O LAYOUT ANTIGO */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: #000 !important; 
+            font-family: 'Helvetica', Arial, sans-serif; 
+            color: #fff;
             display: flex;
             justify-content: center;
             padding: 20px;
         }
-
-        .container {
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
+        .container { width: 100%; max-width: 400px; text-align: center; }
+        
+        /* LOGO SEM FUNDO */
+        .logo { width: 180px; margin: 30px 0; }
+        
+        /* IMAGEM PREMIUM */
+        .banner { 
+            width: 100%; 
+            border-radius: 15px; 
+            border: 1px solid #222;
+            margin-bottom: 20px;
         }
 
-        /* HEADER - LOGO TRANSPARENTE */
-        .logo-header {
-            padding: 30px 0;
-        }
-        .logo-header img {
-            width: 180px;
-            filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));
-        }
-
-        /* IMAGE DESTAQUE - PROPORÇÃO PREMIUM */
-        .featured-image {
-            width: 100%;
-            border-radius: 16px;
-            margin-bottom: 25px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease;
-        }
-        .featured-image:hover { transform: scale(1.02); }
-
-        /* LINKS STACK */
-        .links-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .link-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: white;
-            text-decoration: none;
-            padding: 18px 20px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 13px;
+        /* BOTÕES ESTILO IMPÉRIO */
+        .btn {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.2s ease;
-        }
-
-        .link-item:hover {
-            background: #1a1a1a;
-            border-color: #444;
-        }
-
-        /* BOTÃO DESTAQUE VIP (MAIOR CONVERSÃO) */
-        .link-item.vip {
-            background: var(--accent-red);
-            border-color: #600000;
-        }
-        .link-item.vip:hover {
-            background: #600000;
-        }
-
-        /* TEXTO E FOOTER */
-        .mission-text {
-            margin-top: 30px;
+            background: #111;
+            border: 1px solid #222;
+            color: #fff;
+            padding: 18px 25px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
             font-size: 14px;
-            color: var(--text-dim);
-            line-height: 1.6;
-        }
-
-        .social-icons {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icons a {
-            color: var(--text-dim);
-            font-size: 22px;
             transition: 0.3s;
         }
+        .btn-vip { background: #4a0000 !important; border-color: #6a0000 !important; }
+        .btn:hover { background: #222; }
 
-        .social-icons a:hover { color: white; }
-
-        .footer-tag {
-            margin-top: 40px;
-            font-size: 10px;
-            letter-spacing: 2px;
-            color: #333;
-            text-transform: uppercase;
-        }
+        .footer-text { font-size: 12px; color: #666; margin-top: 30px; line-height: 1.5; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <header class="logo-header">
-            <img src="URL_DA_SUA_LOGO_TRANSPARENTE.png" alt="FERRARA">
-        </header>
+        <img src="LINK_DA_SUA_LOGO_AQUI.png" class="logo" alt="FERRARA">
 
-        <img src="URL_DA_FOTO_PREMIUM_TOKIO.jpg" alt="Ferrara Tokio" class="featured-image">
+        <img src="LINK_DA_SUA_FOTO_AQUI.jpg" class="banner" alt="Ferrara Tokio">
 
-        <div class="links-stack">
-            <a href="https://ferrara.com.br" class="link-item">
-                Site Oficial <i class="fas fa-arrow-right"></i>
-            </a>
-
-            <a href="https://wa.me/SEUNUMERO" class="link-item vip">
-                Atendimento VIP <i class="fab fa-whatsapp"></i>
-            </a>
-
-            <a href="#" class="link-item">
-                Linha Casual <i class="fas fa-shoe-prints"></i>
-            </a>
-
-            <a href="#" class="link-item">
-                Linha Social <i class="fas fa-chevron-right"></i>
-            </a>
+        <div class="menu">
+            <a href="https://ferrara.com.br" class="btn">SITE OFICIAL <span>→</span></a>
+            <a href="https://wa.me/SEUNUMERO" class="btn btn-vip">ATENDIMENTO VIP <span><i class="fab fa-whatsapp"></i></span></a>
+            <a href="#" class="btn">LINHA CASUAL <span>→</span></a>
+            <a href="#" class="btn">LINHA SOCIAL <span>→</span></a>
         </div>
 
-        <div class="mission-text">
+        <p class="footer-text">
             <strong>FERRARA FOOTWEAR</strong><br>
-            A união entre o design italiano e a alma brasileira.<br>
-            Conforto absoluto em cada detalhe.
-        </div>
-
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fas fa-globe"></i></a>
-        </div>
-
-        <div class="footer-tag">The Next Level Experience</div>
+            Design Italiano, Alma Brasileira.
+        </p>
     </div>
-
 </body>
 </html>
